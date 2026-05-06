@@ -51,7 +51,7 @@ if uploaded_files:
             st.image(image, caption=file.name, width=150)
             
         with col2:
-            file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
+            file_bytes = np.asarray(bytearray(file.getvalue()), dtype=np.uint8)
             img_array = cv2.imdecode(file_bytes, cv2.IMREAD_GRAYSCALE)
 
             if img_array is not None:
